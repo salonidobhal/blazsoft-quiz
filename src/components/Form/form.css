@@ -1,7 +1,7 @@
 .form-container{
-   background-color :/* white;*/rgba(0, 0, 0, 0.5);
+   background-color :/* white;*/rgba(0, 0, 0, 0.7);
     border : 0.5px solid #ccc;
-    padding: 2rem 4rem 2rem 4rem;
+    padding: 2rem;
     color : white;
     border-radius : 5px;
     font-family: 'Quicksand', sans-serif; 

@@ -327,7 +327,7 @@ export default class Register extends Component {
                     <h6><b>Account Details</b> </h6> <hr color="white"></hr>
                     <Row className="form-group">
                         <Label htmlFor="username" xm={12} md={2}>Username</Label>
-                        <Col xm={12} md={10}>
+                        <Col xm={12} md={9}>
                             <Control.text model=".username" id="username" name="username"
                                 placeholder="Create a Username"
                                 className="form-control"
@@ -349,7 +349,7 @@ export default class Register extends Component {
                     </Row>
                     <Row className="form-group">
                         <Label htmlFor="password" xm={12} md={2}>Password</Label>
-                        <Col xm={12} md={10}>
+                        <Col xm={12} md={9}>
                             <Control.text model=".password" id="password" name="password"
                                 placeholder="Create a Password"
                                 type="password"
