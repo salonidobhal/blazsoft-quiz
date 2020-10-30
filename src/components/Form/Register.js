@@ -143,8 +143,8 @@ export default class Register extends Component {
                                 model=".dob"
                                 id="dob"
                                 name="dob"
-                                min={min}
-                                max={max}
+                                min="1990-01-01"
+                                max="2018-01-01"
                                 defaultValue={defaultValue} />
                         </Col>
                     </Row>
