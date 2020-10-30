@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/blazsoft-quiz/static/css/main.80850701.chunk.css",
+    "main.css": "/blazsoft-quiz/static/css/main.cb6d3b48.chunk.css",
     "main.js": "/blazsoft-quiz/static/js/main.2765bcde.chunk.js",
     "main.js.map": "/blazsoft-quiz/static/js/main.2765bcde.chunk.js.map",
     "runtime-main.js": "/blazsoft-quiz/static/js/runtime-main.13530145.js",
@@ -12,7 +12,7 @@
     "static/js/3.c48d4cab.chunk.js.map": "/blazsoft-quiz/static/js/3.c48d4cab.chunk.js.map",
     "index.html": "/blazsoft-quiz/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/blazsoft-quiz/static/css/2.20aa2d7b.chunk.css.map",
-    "static/css/main.80850701.chunk.css.map": "/blazsoft-quiz/static/css/main.80850701.chunk.css.map",
+    "static/css/main.cb6d3b48.chunk.css.map": "/blazsoft-quiz/static/css/main.cb6d3b48.chunk.css.map",
     "static/js/2.825a4971.chunk.js.LICENSE.txt": "/blazsoft-quiz/static/js/2.825a4971.chunk.js.LICENSE.txt",
     "static/media/App.css": "/blazsoft-quiz/static/media/bg.e22f4562.jpg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.13530145.js",
     "static/css/2.20aa2d7b.chunk.css",
     "static/js/2.825a4971.chunk.js",
-    "static/css/main.80850701.chunk.css",
+    "static/css/main.cb6d3b48.chunk.css",
     "static/js/main.2765bcde.chunk.js"
   ]
 }
