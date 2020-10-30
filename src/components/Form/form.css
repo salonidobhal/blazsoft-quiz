@@ -11,7 +11,13 @@
 .text-small{
     font-size :.75rem;
 }
+.text-danger{
+    text-shadow: white !important;
+    font-weight: 800 !important;
+
+}
 .text-center{
+    
     text-align: center;
     text-transform: capitalize;
 }
