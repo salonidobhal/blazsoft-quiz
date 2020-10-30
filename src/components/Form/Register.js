@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
-import { Label, Col, Button, Row } from 'reactstrap';
+import styled from 'styled-components';
+import { Label, Col, Row } from 'reactstrap';
 import './form.css';
 
 
@@ -11,13 +11,28 @@ const minLength = (len) => (val) => val && (val.length >= len);
 const equalLength = (len) => (val) => val && (val.length === len)
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+const validPassword = (val) => /^[A-Za-z]\w{7,15}$/i.test(val);
 
 export default class Register extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(values) {
+        alert(JSON.stringify(values));
+    }
+
     render() {
+        const min = new Date(1990, 1, 1);
+        const max = new Date(2018, 1, 1);
+        const defaultValue = new Date(2010, 1, 1);
         return (
             <div className="form-container">
+                <h2 className="mb-4 text-center">Register user</h2>
                 <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                  <h6><b>Personal Details</b> </h6> <hr color="white"></hr>
+                    <h6><b>Personal Details</b> </h6> <hr color="white"></hr>
                 Student Name <br /><br />
                     <Row className="form-group">
                         <Col className="ml-3" md={{ size: 1.5 }}>
@@ -28,7 +43,7 @@ export default class Register extends Component {
                                 <option>Ms</option>
                             </Control.select>
                         </Col>
-                        <Col md={{ size: 3 }}>
+                        <Col xm={12} md={{ size: 3 }}>
 
                             <Control.text model=".firstname" id="firstname" name="firstname"
                                 placeholder="First Name"
@@ -42,7 +57,7 @@ export default class Register extends Component {
                                 model=".firstname"
                                 show="touched"
                                 messages={{
-                                    required: 'Required',
+                                    required: '*Required\n',
                                     minLength: 'Must be greater than 2 characters',
                                     maxLength: 'Must be 15 characters or less'
                                 }}
@@ -50,7 +65,7 @@ export default class Register extends Component {
 
                         </Col>
 
-                        <Col md={{ size: 3 }}>
+                        <Col xm={12} md={{ size: 3 }}>
 
                             <Control.text model=".middlename" id="middlename" name="middlename"
                                 placeholder="Middle Name (optional)"
@@ -58,7 +73,7 @@ export default class Register extends Component {
                             />
 
                         </Col>
-                        <Col md={{ size: 3 }}>
+                        <Col xm={12} md={{ size: 3 }}>
                             <Control.text model=".lastname" id="lastname" name="lastname"
                                 placeholder="Last Name"
                                 className="form-control"
@@ -71,7 +86,7 @@ export default class Register extends Component {
                                 model=".lastname"
                                 show="touched"
                                 messages={{
-                                    required: '*Required',
+                                    required: '*Required\n',
                                     minLength: 'Must be greater than 2 characters',
                                     maxLength: 'Must be 15 characters or less'
                                 }}
@@ -81,8 +96,8 @@ export default class Register extends Component {
                     </Row>
 
                     <Row className="form-group" >
-                        <Label for="gender" md={2}>Gender</Label>
-                        <Col md={2}>
+                        <Label for="gender" xm={12} md={2}>Gender</Label>
+                        <Col xm={12} md={3}>
                             <div className="mx-auto">
                                 <Label>
                                     <Control.radio
@@ -94,7 +109,7 @@ export default class Register extends Component {
                                     </Label>
                             </div>
                         </Col>
-                        <Col md={2}>
+                        <Col xm={12} md={3}>
                             <div className="mx-auto">
                                 <Label>
                                     <Control.radio
@@ -107,7 +122,7 @@ export default class Register extends Component {
                             </div>
                         </Col>
 
-                        <Col md={2}>
+                        <Col xm={12} md={3}>
                             <div className="mx-auto">
                                 <Label>
                                     <Control.radio
@@ -120,59 +135,65 @@ export default class Register extends Component {
                             </div>
                         </Col>
                     </Row>
-                 <Row className="form-group">
-                 <Label htmlFor="dob" md={2}>Date of Birth</Label> 
-                    <Col md={10}>
-                    <Control.text type="date" model=".dob" id="dob" name="dob"
-                    max="01-01-2010"/>
-                    </Col>
-                 </Row>
                     <Row className="form-group">
-                                <Label htmlFor="mobile"  md = {2}>Mobile Number</Label>
-                                <Col md = {4}>
-                                <Control.text model=".mobile" id="mobile" name="mobile"
-                                    placeholder="Enter your 10 digit mobile number"
-                                    className="form-control"
-                                    validators={{
-                                        required, equalLength: equalLength(10), isNumber
-                                    }}
-                                />
-                                <Errors
-                                    className="text-danger text-small"
-                                    model=".mobile"
-                                    show="touched"
-                                    messages={{
-                                        required: 'Required',
-                                        equalLength: 'Must be a 10 digit number',
-                                        isNumber: 'Must be a number'
-                                    }}
-                                />                           
-                        </Col>                          
-                                <Label htmlFor="emergency-mobile"  md = {2}>Emergency Contact</Label>
-                               <Col md = {4}>
-                                <Control.text model=".emergency-mobile" id="emergency-mobile" name="emergency-mobile"
-                                    placeholder=""
-                                    className="form-control"
-                                    validators={{
-                                        required, minLength: minLength(10), maxLength: maxLength(10), isNumber
-                                    }}
-                                />
-                                <Errors
-                                    className="text-danger text-small"
-                                    model=".emergency-mobile"
-                                    show="touched"
-                                    messages={{
-                                        required: 'Required',
-                                        minLength: 'Must be greater than 10 numbers',
-                                        maxLength: 'Must be 10 digits',
-                                        isNumber: 'Must be a number'
-                                    }}
-                                />
+                        <Label htmlFor="dob" xm={12} md={2}>Date of Birth</Label>
+                        <Col xm={12} md={10}>
+                            <Control.text
+                                type="date"
+                                model=".dob"
+                                id="dob"
+                                name="dob"
+                                min={min}
+                                max={max}
+                                defaultValue={defaultValue} />
                         </Col>
                     </Row>
                     <Row className="form-group">
-                        <Label htmlFor="email" md={2}>Email</Label>
-                        <Col md={10}>
+                        <Label htmlFor="mobile" xm={12} md={2}>Mobile Number</Label>
+                        <Col xm={12} md={4}>
+                            <Control.text model=".mobile" id="mobile" name="mobile"
+                                placeholder="Enter your 10 digit mobile number"
+                                className="form-control"
+                                validators={{
+                                    required, equalLength: equalLength(10), isNumber
+                                }}
+                            />
+                            <Errors
+                                className="text-danger text-small"
+                                model=".mobile"
+                                show="touched"
+                                messages={{
+                                    required: '*Required\n',
+                                    equalLength: 'Must be a 10 digit number',
+                                    isNumber: 'Must be a number'
+                                }}
+                            />
+                        </Col>
+                        <Label htmlFor="emergency-mobile" xm={12} md={3}>Emergency Contact</Label>
+                        <Col xm={12} md={3}>
+                            <Control.text model=".emergency-mobile" id="emergency-mobile" name="emergency-mobile"
+                                placeholder="Another mobile number"
+                                className="form-control"
+                                validators={{
+                                    required, minLength: minLength(10), maxLength: maxLength(10), isNumber
+                                }}
+                            />
+                            <Errors
+                                className="text-danger text-small"
+                                model=".emergency-mobile"
+                                show="touched"
+                                messages={{
+                                    required: '*Required\n',
+                                    minLength: 'Must be greater than 10 numbers',
+                                    maxLength: 'Must be 10 digits',
+                                    isNumber: 'Must be a number'
+                                }}
+                            />
+                        </Col>
+                    </Row>
+                    <Row className="form-group">
+                        <Label htmlFor="email" xm={12} md={2}>Email</Label>
+                        <Col xm={12} md={10}>
                             <Control.text model=".email" id="email" name="email"
                                 placeholder="Email"
                                 className="form-control"
@@ -185,17 +206,17 @@ export default class Register extends Component {
                                 model=".email"
                                 show="touched"
                                 messages={{
-                                    required: 'Required',
+                                    required: '*Required\n',
                                     validEmail: 'Invalid Email Address'
                                 }}
                             />
                         </Col>
                     </Row>
-                    
-                        <Row className="form-group ">
-                        <Label htmlFor="father-firstname" md={2}>Father's Name</Label>
 
-                        <Col md={3}>
+                    <Row className="form-group ">
+                        <Label htmlFor="father-firstname" xm={12} md={2}>Father's Name</Label>
+
+                        <Col xm={12} md={3}>
                             <Control.text model=".father-firstname" id="father-firstname" name="father-firstname"
                                 placeholder="First Name"
                                 className="form-control"
@@ -208,19 +229,19 @@ export default class Register extends Component {
                                 model=".father-firstname"
                                 show="touched"
                                 messages={{
-                                    required: 'Required',
+                                    required: '*Required\n',
                                     minLength: 'Must be greater than 2 characters',
                                     maxLength: 'Must be 15 characters or less'
                                 }}
                             />
                         </Col>
-                        <Col md={3}>
+                        <Col xm={12} md={3}>
                             <Control.text model=".father-middlename" id="father-middlename" name="father-middlename"
                                 placeholder="Middle Name"
                                 className="form-control"
                             />
                         </Col>
-                        <Col md={3}>
+                        <Col xm={12} md={3}>
                             <Control.text model=".father-lastname" id="father-lastname" name="father-lastname"
                                 placeholder="Last Name"
                                 className="form-control"
@@ -233,7 +254,7 @@ export default class Register extends Component {
                                 model=".father-lastname"
                                 show="touched"
                                 messages={{
-                                    required: 'Required',
+                                    required: '*Required\n',
                                     minLength: 'Must be greater than 2 characters',
                                     maxLength: 'Must be 15 characters or less'
                                 }}
@@ -241,8 +262,8 @@ export default class Register extends Component {
                         </Col>
                     </Row>
                     <Row className="form-group">
-                        <Label htmlFor="mfirstname" md={2}>Mother's Name</Label>
-                        <Col md={5}>
+                        <Label htmlFor="mfirstname" xm={12} md={2}>Mother's Name</Label>
+                        <Col xm={12} md={5}>
                             <Control.text model=".mfirstname" id="mfirstname" name="mfirstname"
                                 placeholder="First Name"
                                 className="form-control"
@@ -255,13 +276,13 @@ export default class Register extends Component {
                                 model=".mfirstname"
                                 show="touched"
                                 messages={{
-                                    required: 'Required',
+                                    required: '*Required\n',
                                     minLength: 'Must be greater than 2 characters',
                                     maxLength: 'Must be 15 characters or less'
                                 }}
                             />
                         </Col>
-                        <Col md={5}>
+                        <Col xm={12} md={5}>
                             <Control.text model=".mlastname" id="mlastname" name="mlastname"
                                 placeholder="Last Name"
                                 className="form-control"
@@ -282,10 +303,10 @@ export default class Register extends Component {
                         </Col>
                     </Row>
                     <Row className="form-group">
-                        <Label htmlFor="kids" md={2}>Number of Kids</Label>
-                        <Col md={10}>
+                        <Label htmlFor="kids" xm={12} md={2}>Number of Kids</Label>
+                        <Col xm={12} md={10}>
                             <Control.text model=".kids" id="kids" name="kids"
-                                type = "number"
+                                type="number"
                                 placeholder=""
                                 min="0"
                                 className="form-control"
@@ -305,8 +326,8 @@ export default class Register extends Component {
                     </Row>
                     <h6><b>Account Details</b> </h6> <hr color="white"></hr>
                     <Row className="form-group">
-                        <Label htmlFor="username" md={2}>Username</Label>
-                        <Col md={10}>
+                        <Label htmlFor="username" xm={12} md={2}>Username</Label>
+                        <Col xm={12} md={10}>
                             <Control.text model=".username" id="username" name="username"
                                 placeholder="Create a Username"
                                 className="form-control"
@@ -327,14 +348,14 @@ export default class Register extends Component {
                         </Col>
                     </Row>
                     <Row className="form-group">
-                        <Label htmlFor="password" md={2}>Password</Label>
-                        <Col md={10}>
+                        <Label htmlFor="password" xm={12} md={2}>Password</Label>
+                        <Col xm={12} md={10}>
                             <Control.text model=".password" id="password" name="password"
                                 placeholder="Create a Password"
                                 type="password"
                                 className="form-control"
                                 validators={{
-                                    required, minLength: minLength(3), maxLength: maxLength(15)
+                                    required, validPassword
                                 }}
                             />
                             <Errors
@@ -343,18 +364,17 @@ export default class Register extends Component {
                                 show="touched"
                                 messages={{
                                     required: '*Required\n',
-                                    minLength: 'Must be greater than 2 characters',
-                                    maxLength: 'Must be 15 characters or less'
+                                    validPassword: "Password should be 7-16 characters long \n Must contain only characters, numeric digits underscore \n First character must be a letter"
                                 }}
                             />
                         </Col>
                     </Row>
-                    
+
                     <Row className="form-group">
-                        <Col md={{ size: 10, offset: 2 }}>
-                            <Button type="submit" color="primary">
+                        <Col xm={{ offset: 4, size: 12 }} md={{ offset: 4 }}>
+                            <ButtonWrap type="submit">
                                 Register
-                                    </Button>
+                                    </ButtonWrap>
                         </Col>
                     </Row>
 
@@ -363,5 +383,22 @@ export default class Register extends Component {
         )
     }
 }
+
+const ButtonWrap = styled.button`
+background-color: #4fab9a;
+border: none;
+border-radius : 30px;
+padding: 1rem;
+font-weight: 700;
+color: white;
+width: 25vw;
+text-transform : uppercase;
+align-self: center;
+margin: 1rem auto 1rem auto;
+transition: all .5s ease-in-out;
+&:hover{
+    transform:scale(1.03);
+}
+`;
 
 

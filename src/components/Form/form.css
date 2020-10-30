@@ -1,13 +1,18 @@
 .form-container{
-   background-color : white;/*rgba(0, 0, 0, 0.5);*/
+   background-color :/* white;*/rgba(0, 0, 0, 0.5);
     border : 0.5px solid #ccc;
     padding: 2rem 4rem 2rem 4rem;
-    color : black;
+    color : white;
     border-radius : 5px;
     font-family: 'Quicksand', sans-serif; 
+    justify-content: center;
 }
 
 .text-small{
     font-size :.75rem;
+}
+.text-center{
+    text-align: center;
+    text-transform: capitalize;
 }
 

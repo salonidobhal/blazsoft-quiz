@@ -1,6 +1,6 @@
 .App{
-  background-image : url('./bg4.jpg');
+  background-image : url('./bg.jpg');
   background-size:cover;
-  background-position: right;
-  padding: 2rem 10rem 2rem 10rem;
+  background-position: center;
+  padding: 2rem 15vw 2rem 15vw;
 }

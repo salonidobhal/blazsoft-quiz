@@ -1,8 +1,10 @@
-{"homepage":"http://salonidobhal.github.io/blazsoft-quiz",
+{
+  "homepage": "http://salonidobhal.github.io/blazsoft-quiz",
   "name": "blazsoft-quiz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@progress/kendo-react-dateinputs": "^4.0.0",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -20,8 +22,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
