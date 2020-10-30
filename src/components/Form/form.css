@@ -1,0 +1,13 @@
+.form-container{
+   background-color : white;/*rgba(0, 0, 0, 0.5);*/
+    border : 0.5px solid #ccc;
+    padding: 2rem 4rem 2rem 4rem;
+    color : black;
+    border-radius : 5px;
+    font-family: 'Quicksand', sans-serif; 
+}
+
+.text-small{
+    font-size :.75rem;
+}
+
