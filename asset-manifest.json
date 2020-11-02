@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/blazsoft-quiz/static/css/main.8c7bb618.chunk.css",
-    "main.js": "/blazsoft-quiz/static/js/main.2bcc408f.chunk.js",
-    "main.js.map": "/blazsoft-quiz/static/js/main.2bcc408f.chunk.js.map",
+    "main.js": "/blazsoft-quiz/static/js/main.36bcc0ff.chunk.js",
+    "main.js.map": "/blazsoft-quiz/static/js/main.36bcc0ff.chunk.js.map",
     "runtime-main.js": "/blazsoft-quiz/static/js/runtime-main.c3b2733b.js",
     "runtime-main.js.map": "/blazsoft-quiz/static/js/runtime-main.c3b2733b.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/blazsoft-quiz/static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.4e0966be.chunk.js": "/blazsoft-quiz/static/js/2.4e0966be.chunk.js",
-    "static/js/2.4e0966be.chunk.js.map": "/blazsoft-quiz/static/js/2.4e0966be.chunk.js.map",
+    "static/js/2.f763236b.chunk.js": "/blazsoft-quiz/static/js/2.f763236b.chunk.js",
+    "static/js/2.f763236b.chunk.js.map": "/blazsoft-quiz/static/js/2.f763236b.chunk.js.map",
     "static/js/3.73411484.chunk.js": "/blazsoft-quiz/static/js/3.73411484.chunk.js",
     "static/js/3.73411484.chunk.js.map": "/blazsoft-quiz/static/js/3.73411484.chunk.js.map",
     "index.html": "/blazsoft-quiz/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/blazsoft-quiz/static/css/2.20aa2d7b.chunk.css.map",
     "static/css/main.8c7bb618.chunk.css.map": "/blazsoft-quiz/static/css/main.8c7bb618.chunk.css.map",
-    "static/js/2.4e0966be.chunk.js.LICENSE.txt": "/blazsoft-quiz/static/js/2.4e0966be.chunk.js.LICENSE.txt",
+    "static/js/2.f763236b.chunk.js.LICENSE.txt": "/blazsoft-quiz/static/js/2.f763236b.chunk.js.LICENSE.txt",
     "static/media/App.css": "/blazsoft-quiz/static/media/bg4.da1c0563.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.c3b2733b.js",
     "static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.4e0966be.chunk.js",
+    "static/js/2.f763236b.chunk.js",
     "static/css/main.8c7bb618.chunk.css",
-    "static/js/main.2bcc408f.chunk.js"
+    "static/js/main.36bcc0ff.chunk.js"
   ]
 }
