@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { Label, Col, Row } from 'reactstrap';
 import './form.css';
 
@@ -21,21 +23,27 @@ export default class Register extends Component {
     }
 
     handleSubmit(values) {
-        alert(JSON.stringify(values));
+        axios.post('http://localhost:8080/login-service/create')
+                .then(res => {
+                        console.log("SignUp Successful");
+                        console.log(values);
+                        
+                })
+                .catch(err => {
+                    console.log(err);
+                });
     }
 
     render() {
-        const min = new Date(1990, 1, 1);
-        const max = new Date(2018, 1, 1);
-        const defaultValue = new Date(2010, 1, 1);
         return (
+            <div className="App">
             <div className="form-container">
                 <h2 className="mb-4 text-center">Register user</h2>
                 <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                    <h6><b>Personal Details</b> </h6> <hr color="white"></hr>
+                    <h6><b>Personal Details</b> </h6> <hr/>
                 Student Name <br /><br />
                     <Row className="form-group">
-                        <Col className="ml-3" md={{ size: 1.5 }}>
+                        <Col className="ml-2" md={{ size: 1.5 }}>
                             <Control.select model=".suffix" name="suffix"
                                 className="form-control">
                                 <option>Mr</option>
@@ -144,8 +152,7 @@ export default class Register extends Component {
                                 id="dob"
                                 name="dob"
                                 min="1990-01-01"
-                                max="2018-01-01"
-                                defaultValue={defaultValue} />
+                                max="2018-01-01" />
                         </Col>
                     </Row>
                     <Row className="form-group">
@@ -302,7 +309,7 @@ export default class Register extends Component {
                             />
                         </Col>
                     </Row>
-                    <Row className="form-group">
+                    <Row className="form-group mb-3">
                         <Label htmlFor="kids" xm={12} md={2}>Number of Kids</Label>
                         <Col xm={12} md={10}>
                             <Control.text model=".kids" id="kids" name="kids"
@@ -311,7 +318,7 @@ export default class Register extends Component {
                                 min="0"
                                 className="form-control"
                                 validators={{
-                                    isNumber
+                                    required
                                 }}
                             />
                             <Errors
@@ -319,12 +326,12 @@ export default class Register extends Component {
                                 model=".kids"
                                 show="touched"
                                 messages={{
-                                    isNumber: 'Must be a number'
+                                    required: '*Required\n'
                                 }}
                             />
                         </Col>
                     </Row>
-                    <h6><b>Account Details</b> </h6> <hr color="white"></hr>
+                    <h6><b>Account Details</b> </h6> <hr/>
                     <Row className="form-group">
                         <Label htmlFor="username" xm={12} md={2}>Username</Label>
                         <Col xm={12} md={9}>
@@ -377,18 +384,22 @@ export default class Register extends Component {
                                     </ButtonWrap>
                         </Col>
                     </Row>
-
+                    <div className="link">
+                        <Link to="/signIn" > Already have an account? Sign In.</Link>
+                    </div>
                 </LocalForm>
+            </div>
             </div>
         )
     }
 }
 
 const ButtonWrap = styled.button`
-background-color: #4fab9a;
+background-color: #37bade;
 border: none;
 border-radius : 30px;
 padding: 1rem;
+font-size : 1.2rem;
 font-weight: 700;
 color: white;
 width: 25vw;
@@ -400,5 +411,3 @@ transition: all .5s ease-in-out;
     transform:scale(1.03);
 }
 `;
-
-
