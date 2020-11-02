@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import styled from 'styled-components';
-
 import { Link } from 'react-router-dom';
-
 import { Label, Col, Row } from 'reactstrap';
 
 
