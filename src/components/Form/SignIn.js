@@ -10,7 +10,6 @@ import { Label, Col, Row } from 'reactstrap';
 export default class SignIn extends Component {
     render() {
         return (
-
             <div className="App">
             <div className="form-container">
                 <h2 className="mb-4 text-center">Login user</h2>
