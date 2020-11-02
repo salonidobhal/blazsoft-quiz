@@ -3,6 +3,9 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Label, Col, Row } from 'reactstrap';
+import '../../App.css';
+import './form.css';
+
 
 
 export default class SignIn extends Component {

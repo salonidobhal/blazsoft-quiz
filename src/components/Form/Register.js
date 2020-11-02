@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Label, Col, Row } from 'reactstrap';
 import './form.css';
+import '../../App.css';
 
 
 const required = (val) => val && val.length;
