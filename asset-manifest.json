@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/blazsoft-quiz/static/css/main.cb6d3b48.chunk.css",
-    "main.js": "/blazsoft-quiz/static/js/main.2765bcde.chunk.js",
-    "main.js.map": "/blazsoft-quiz/static/js/main.2765bcde.chunk.js.map",
-    "runtime-main.js": "/blazsoft-quiz/static/js/runtime-main.13530145.js",
-    "runtime-main.js.map": "/blazsoft-quiz/static/js/runtime-main.13530145.js.map",
+    "main.css": "/blazsoft-quiz/static/css/main.8c7bb618.chunk.css",
+    "main.js": "/blazsoft-quiz/static/js/main.2bcc408f.chunk.js",
+    "main.js.map": "/blazsoft-quiz/static/js/main.2bcc408f.chunk.js.map",
+    "runtime-main.js": "/blazsoft-quiz/static/js/runtime-main.c3b2733b.js",
+    "runtime-main.js.map": "/blazsoft-quiz/static/js/runtime-main.c3b2733b.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/blazsoft-quiz/static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.825a4971.chunk.js": "/blazsoft-quiz/static/js/2.825a4971.chunk.js",
-    "static/js/2.825a4971.chunk.js.map": "/blazsoft-quiz/static/js/2.825a4971.chunk.js.map",
-    "static/js/3.c48d4cab.chunk.js": "/blazsoft-quiz/static/js/3.c48d4cab.chunk.js",
-    "static/js/3.c48d4cab.chunk.js.map": "/blazsoft-quiz/static/js/3.c48d4cab.chunk.js.map",
+    "static/js/2.4e0966be.chunk.js": "/blazsoft-quiz/static/js/2.4e0966be.chunk.js",
+    "static/js/2.4e0966be.chunk.js.map": "/blazsoft-quiz/static/js/2.4e0966be.chunk.js.map",
+    "static/js/3.73411484.chunk.js": "/blazsoft-quiz/static/js/3.73411484.chunk.js",
+    "static/js/3.73411484.chunk.js.map": "/blazsoft-quiz/static/js/3.73411484.chunk.js.map",
     "index.html": "/blazsoft-quiz/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/blazsoft-quiz/static/css/2.20aa2d7b.chunk.css.map",
-    "static/css/main.cb6d3b48.chunk.css.map": "/blazsoft-quiz/static/css/main.cb6d3b48.chunk.css.map",
-    "static/js/2.825a4971.chunk.js.LICENSE.txt": "/blazsoft-quiz/static/js/2.825a4971.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/blazsoft-quiz/static/media/bg.e22f4562.jpg"
+    "static/css/main.8c7bb618.chunk.css.map": "/blazsoft-quiz/static/css/main.8c7bb618.chunk.css.map",
+    "static/js/2.4e0966be.chunk.js.LICENSE.txt": "/blazsoft-quiz/static/js/2.4e0966be.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/blazsoft-quiz/static/media/bg4.da1c0563.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.13530145.js",
+    "static/js/runtime-main.c3b2733b.js",
     "static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.825a4971.chunk.js",
-    "static/css/main.cb6d3b48.chunk.css",
-    "static/js/main.2765bcde.chunk.js"
+    "static/js/2.4e0966be.chunk.js",
+    "static/css/main.8c7bb618.chunk.css",
+    "static/js/main.2bcc408f.chunk.js"
   ]
 }
